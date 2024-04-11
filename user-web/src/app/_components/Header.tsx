@@ -4,7 +4,7 @@ import Logo from "../../../public/image/userMainLogo.svg";
 import Image from "next/image";
 export default function Header() {
   return (
-    <header className="flex items-center justify-between px-16 py-12 text-lg font-semibold">
+    <header className="flex items-center justify-between px-32 py-8 text-lg font-semibold">
       <Link href="/">
         <Image src={Logo} alt="logo" className="w-300"></Image>
       </Link>
