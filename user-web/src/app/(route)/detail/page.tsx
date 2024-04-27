@@ -14,6 +14,8 @@ const Detail = () => {
             관계
           </div>
         </div>
+        {/* <img alt="detail_image"></img> */}
+        <div className="w-auto h-52 bg-slate-200">d</div>
       </div>
     </section>
   );

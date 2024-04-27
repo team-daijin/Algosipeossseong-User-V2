@@ -2,7 +2,7 @@ import Image from "next/image";
 import thumbnail from "@image/cardnews.png";
 const Cardnews = () => {
   return (
-    <article className=" rounded-tl-3xl w-52">
+    <article className="rounded-tl-3xl w-60">
       <Image
         src={thumbnail}
         alt="cardnews_image"

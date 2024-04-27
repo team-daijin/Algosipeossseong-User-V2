@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Banner from "@image/userbanner.svg";
 import Category from "./_components/Category";
 import Cardnews from "./_components/Cardnews";
+import useCardnewsListQuery, {
+  CardnewsType,
+} from "./_hooks/Cardnews/getCardnews";
 export default function Home() {
-  const data = [1, 2, 3, 4, 5];
+  const { data, isLoading, isError } = useCardnewsListQuery("마음");
   return (
-    <main className="px-32">
+    <main className="px-12">
       <Image src={Banner} alt="banner" width={0} height={0} sizes="8vw"></Image>
       <div className="flex flex-row">
         <Category />
@@ -19,7 +24,7 @@ export default function Home() {
               </h2>
             </div>
             <div className="flex flex-row gap-4 px-12">
-              {data?.map((slide: any) => <Cardnews />)}
+              {/* {data?.map((post: CardnewsType) => <Cardnews />)} */}
             </div>
           </section>
         </main>
