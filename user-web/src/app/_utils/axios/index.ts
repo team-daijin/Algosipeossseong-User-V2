@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: `https://algosipeosseong.site`,
+  baseURL: process.env.NEXT_PUBLIC_API_KEY,
   timeout: 10000,
 });
 

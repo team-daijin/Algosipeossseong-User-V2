@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col w-full mx-auto max-w-screen-2xl">
+      <body className="flex flex-col w-full px-12 mx-auto max-w-screen-2xl">
         <Header />
         <main>
           <Providers>{children}</Providers>
