@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import icon from "@image/categoryLogo.svg";
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useState } from "react";
 const Category = () => {
+  const [currentPath, setCurrentPath] = useState("");
   const constant = [
     {
       title: "신체, 2차성징",
@@ -24,14 +29,26 @@ const Category = () => {
       link: "/category/equality",
     },
   ];
+
+  const handleClick = (link: string) => {
+    setCurrentPath(link);
+  };
+
   return (
     <aside className="flex flex-col items-center gap-4 w-36">
       <div className="flex flex-row items-center justify-center gap-2 p-4 mt-8 bg-gray-100 rounded-full w-36">
         <Image src={icon} alt="category"></Image>
         <h5 className="font-semibold ">카테고리</h5>
       </div>
-      {constant.map((data) => (
-        <Link href={data.link} className="font-medium w-28">
+      {constant.map((data, index) => (
+        <Link
+          key={index}
+          href={data.link}
+          className={`font-medium w-28 ${
+            currentPath === data.link ? "text-purple-500" : ""
+          }`}
+          onClick={() => handleClick(data.link)}
+        >
           {data.title}
         </Link>
       ))}
