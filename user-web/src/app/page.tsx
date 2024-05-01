@@ -11,7 +11,7 @@ import useCardnewsListQuery, {
 import { useState } from "react";
 export default function Home() {
   // const { data, isLoading, isError } = useCardnewsListQuery("RELATION");
-  const { data, isLoading, isError } = useCardnewsListQuery("");
+  const { data, isLoading, isError } = useCardnewsListQuery("body");
   console.log(data);
   // const data = [1, 2, 3, 4, 5];
 
@@ -68,7 +68,7 @@ export default function Home() {
               {data?.data.map((data, index) => {
                 return (
                   <div key={index} className="flex flex-col px-12 py-8">
-                    <div className="flex flex-col">
+                    <div className="flex flex-col mb-2">
                       <h2 className="text-2xl font-semibold">
                         {constant[index].title}
                       </h2>
@@ -76,13 +76,15 @@ export default function Home() {
                         {constant[index].subtitle}
                       </h2>
                     </div>
-                    {data.cards?.map((card: Card) => {
-                      if (card) {
-                        console.log(card);
-                        // Rest of your code...
-                      }
-                      return <Cardnews data={card} />;
-                    })}
+                    <div className="flex flex-row gap-8">
+                      {data.cards?.map((card: Card) => {
+                        if (card) {
+                          console.log(card);
+                          // Rest of your code...
+                        }
+                        return <Cardnews data={card} />;
+                      })}
+                    </div>
                   </div>
                 );
               })}

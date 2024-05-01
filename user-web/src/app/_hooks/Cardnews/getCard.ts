@@ -3,13 +3,12 @@ import instance from "../../_utils/axios";
 import { useQuery } from "@tanstack/react-query";
 
 export interface CardnewsType {
-  id: String;
-  title: String;
-  writer: String;
-  category: String;
-  content: String;
+  id: Number;
   thumbnail: String;
-  image: String;
+  category: String;
+  title: String;
+  expert: String;
+  content: String;
 }
 
 const getCardnewsQuery = async ({
