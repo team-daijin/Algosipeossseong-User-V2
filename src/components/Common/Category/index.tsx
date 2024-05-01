@@ -1,6 +1,7 @@
 import Image from "next/image";
 import icon from "@image/categoryLogo.svg";
 import Link from "next/link";
+
 const Category = () => {
   const constant = [
     {
@@ -30,8 +31,8 @@ const Category = () => {
         <Image src={icon} alt="category"></Image>
         <h5 className="font-semibold ">카테고리</h5>
       </div>
-      {constant.map((data) => (
-        <Link href={data.link} className="font-medium w-28">
+      {constant.map((data, index) => (
+        <Link key={index} href={data.link} className="font-medium w-28">
           {data.title}
         </Link>
       ))}

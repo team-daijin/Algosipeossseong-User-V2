@@ -6,7 +6,7 @@ const Cardnews = () => {
       <Image
         src={thumbnail}
         alt="cardnews_image"
-        className=" h-30 w-60 rounded-tl-3xl"
+        className="h-30 w-60 rounded-tl-3xl"
       />
       <div className="relative px-2 text-sm text-purple-600 border-2 border-purple-500 w-fit backdrop-blur -top-8 left-2">
         관계
@@ -25,5 +25,4 @@ const Cardnews = () => {
     </article>
   );
 };
-
 export default Cardnews;
