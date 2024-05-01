@@ -4,7 +4,8 @@ import useCardQuery from "@/app/_hooks/Cardnews/getCard";
 import contentImage from "../../../../../public/image/mind_genderon1.png";
 import { useParams, useRouter, usePathname } from "next/navigation";
 import { title } from "process";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 type Props = {
   params: {
     slug: number;
@@ -13,9 +14,11 @@ type Props = {
 
 const Detail = ({ params: { slug } }: Props) => {
   const { data, isLoading, isError } = useCardQuery(slug);
+  const [mainImage, setMainImage] = useState<string | undefined>(undefined);
   console.log(data);
   const imageURLs = data?.data.content;
-  const imageURLArray = imageURLs?.split(" ");
+
+  console.log(imageURLs);
 
   return (
     <section className="px-32 lg:px-64">
@@ -34,16 +37,9 @@ const Detail = ({ params: { slug } }: Props) => {
             {data?.data.category}
           </div>
         </div>
-        {/* <img src={data?.data.content} alt="detail_image"></img> */}
-        <div
-          // dangerouslySetInnerHTML={{ __html: data?.data.content }}
-          className="w-auto h-52 bg-slate-200"
-        />
-        <div className="image-gallery">
-          {/* {imageURLArray?.map((imageURL, index) => (
-            <img key={index} src={imageURL} alt={`Image ${index + 1}`} />
-          ))} */}
-          <img src={contentImage}></img>
+        <div className="mt-5">
+          <Image src={imageURLs} alt="detail_image" width={1000} height={500} />
+          {/* <img src={data?.data.content} alt="detail_image"></img> */}
         </div>
       </div>
     </section>
