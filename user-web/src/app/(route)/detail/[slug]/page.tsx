@@ -39,7 +39,6 @@ const Detail = ({ params: { slug } }: Props) => {
         </div>
         <div className="mt-5">
           <Image src={imageURLs} alt="detail_image" width={1000} height={500} />
-          {/* <img src={data?.data.content} alt="detail_image"></img> * /}
         </div>
       </div>
     </section>
