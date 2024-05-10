@@ -14,6 +14,16 @@ type Props = {
     slug: string;
   };
 };
+
+interface Card {
+  date: string;
+  thumbnail: string;
+  category: string;
+  title: string;
+  expert: string;
+  id: number;
+  subTitle: string;
+}
 // export async function generateMetadata({
 //   params: { slug },
 // }: Props): Promise<Metadata> {
@@ -30,7 +40,7 @@ export default function PostPage({ params: { slug } }: Props) {
   return (
     <section className="flex flex-row overflow-hidden">
       <div className="flex flex-col gap-1 mt-8 ">
-        <div className="flex flex-row mb-2 ml-2">
+        <div className="flex flex-row ml-24">
           <Image
             src={matchedCategory?.icon}
             alt="logo"
@@ -41,14 +51,12 @@ export default function PostPage({ params: { slug } }: Props) {
             {matchedCategory?.title}
           </h1>
         </div>
-        <div className="flex flex-row gap-4 px-12">
+        <div className="flex flex-row px-12">
           {data?.data.map((data, index) => {
             return (
-              <div key={index} className="flex flex-col px-12 py-8">
+              <div key={index} className="flex flex-row gap-5 px-12 py-8">
                 {data.cards?.map((card: Card) => {
                   if (card) {
-                    console.log(card);
-                    // Rest of your code...
                   }
                   return <Cardnews data={card} />;
                 })}

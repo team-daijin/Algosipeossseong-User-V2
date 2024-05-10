@@ -22,6 +22,7 @@ const getCardnewsQuery = async ({
   return await instance.get(url);
 };
 
+
 const useCardQuery = (id: number) => {
   return useQuery({
     queryKey: ["Cardnews", id],
