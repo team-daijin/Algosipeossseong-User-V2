@@ -1,7 +1,3 @@
-import Image from "next/image";
-import thumbnail from "@image/cardnews.png";
-import { CardnewsType } from "../_hooks/Cardnews/getCardnews";
-import Category from "./Category";
 import Link from "next/link";
 
 interface Card {
@@ -32,7 +28,7 @@ const Cardnews = (props: { data: Card }) => {
             <h6>|</h6>
             <h6>{props.data.date}</h6>
           </div>
-          <h2 className="text-base font-semibold ">{props.data.title}</h2>
+          <h1 className="text-base font-semibold ">{props.data.title}</h1>
           <h3 className="text-xs text-gray-500">{props.data.subTitle}</h3>
         </div>
       </Link>

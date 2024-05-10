@@ -7,10 +7,10 @@ const CategoryLayout = ({
 }>) => {
   return (
     <div className="flex flex-row h-auto overflow-hidden">
-      <Category></Category>
+      <Category />
       <div>{children}</div>
     </div>
   );
-};  
+};
 
 export default CategoryLayout;
