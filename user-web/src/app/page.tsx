@@ -67,7 +67,7 @@ export default function Home() {
             <div className="flex flex-col gap-4 px-12">
               {data?.data.map((data, index) => {
                 return (
-                  <div key={index} className="flex flex-col px-12 py-8">
+                  <div key={index} className="flex flex-col py-8 pt-8">
                     <div className="flex flex-col mb-2">
                       <h2 className="text-2xl font-semibold">
                         {constant[index].title}

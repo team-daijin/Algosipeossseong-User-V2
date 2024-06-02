@@ -29,7 +29,7 @@ export default function PostPage({ params: { slug } }: Props) {
   const { data, isLoading, isError } = useCardnewsListQuery("");
   return (
     <section className="flex flex-row overflow-hidden">
-      <div className="flex flex-col gap-1 mt-8 ">
+      <div className="flex flex-col gap-1 mt-8 ml-16">
         <div className="flex flex-row mb-2 ml-2">
           <Image
             src={matchedCategory?.icon}
@@ -41,10 +41,10 @@ export default function PostPage({ params: { slug } }: Props) {
             {matchedCategory?.title}
           </h1>
         </div>
-        <div className="flex flex-row gap-4 px-12">
+        <div className="flex flex-col gap-4 px-12">
           {data?.data.map((data, index) => {
             return (
-              <div key={index} className="flex flex-col px-12 py-8">
+              <div key={index} className="flex flex-row px-12 py-8">
                 {data.cards?.map((card: Card) => {
                   if (card) {
                     console.log(card);
