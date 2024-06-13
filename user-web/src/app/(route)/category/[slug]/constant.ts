@@ -6,7 +6,7 @@ import equality from "../../../../../public/image/equality.svg";
 //HEART,BODY,RELATION,VIOLENCE,EQUALITY
 export const constant = [
   {
-    title: "신체, 2차성징",
+    title: "신체,이차성징",
     link: "/category/body",
     param: "body",
     icon: body,

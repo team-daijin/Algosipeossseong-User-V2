@@ -78,10 +78,6 @@ export default function Home() {
                     </div>
                     <div className="flex flex-row gap-8">
                       {data.cards?.map((card: Card) => {
-                        if (card) {
-                          console.log(card);
-                          // Rest of your code...
-                        }
                         return <Cardnews data={card} />;
                       })}
                     </div>

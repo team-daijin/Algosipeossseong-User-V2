@@ -9,6 +9,26 @@ type Props = {
     slug: string;
   };
 };
+
+interface Card {
+  date: string;
+  thumbnail: string;
+  category: string;
+  title: string;
+  expert: string;
+  id: number;
+  subTitle: string;
+}
+// export async function generateMetadata({
+//   params: { slug },
+// }: Props): Promise<Metadata> {
+//   const { title, description } = await getPostData(slug);
+//   return {
+//     title,
+//     description,
+//   };
+// }
+
 export default function PostPage({ params: { slug } }: Props) {
   const matchedCategory = constant.find((item) => item.param === slug); // matchedCategory를 콘솔에 출력
   const Category = constant.find((item) => item.param === slug)?.category; // matchedCategory를 콘솔에 출력
