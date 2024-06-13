@@ -10,7 +10,7 @@ export default function Header() {
       </Link>
       <nav className="flex gap-8">
         <Link href={"https://smore.im/quiz/cLZPn9AiVV"}>성지식 테스트</Link>
-        <Link href="/about">로그인</Link> 
+        <Link href={"https://bento.me/knowledgender"}>알고싶었성이란?</Link>
       </nav>
     </header>
   );

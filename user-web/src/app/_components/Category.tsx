@@ -3,10 +3,19 @@
 import Image from "next/image";
 import icon from "@image/categoryLogo.svg";
 import Link from "next/link";
-import { useParams } from "next/navigation";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+
 const Category = () => {
+  const router = useRouter();
   const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentPath(window.location.pathname);
+    }
+  }, []);
+
   const constant = [
     {
       title: "신체, 2차성징",
@@ -55,4 +64,5 @@ const Category = () => {
     </aside>
   );
 };
+
 export default Category;
