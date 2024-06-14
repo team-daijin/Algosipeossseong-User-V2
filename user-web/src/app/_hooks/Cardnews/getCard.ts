@@ -11,6 +11,24 @@ export interface CardnewsType {
   content: String;
 }
 
+export interface CardnewsType {
+  id: Number;
+  thumbnail: String;
+  category: String;
+  title: String;
+  expert: String;
+  content: String;
+}
+
+export interface Category {
+  id: string;
+  thumbnail: string;
+  category: string;
+  title: string;
+}
+
+export type CategoryArray = Category[];
+
 const getCardnewsQuery = async ({
   queryKey,
 }: {
@@ -22,6 +40,16 @@ const getCardnewsQuery = async ({
   return await instance.get(url);
 };
 
+const getCategoryQuery = async ({
+  queryKey,
+}: {
+  queryKey: ["Category", string];
+}): Promise<AxiosResponse<CategoryArray>> => {
+  const id = queryKey[1];
+  const url = `/card/category/${id}`;
+
+  return await instance.get(url);
+};
 
 const useCardQuery = (id: number) => {
   return useQuery({
@@ -31,22 +59,3 @@ const useCardQuery = (id: number) => {
 };
 
 export default useCardQuery;
-
-// export const useCardnewsListQuery = (category: number) => {
-//   return useQuery<CardnewsType[], AxiosError>(
-//     ["cardList", category],
-//     async () => {
-//       const params = { category };
-//       const response = await instance.get("/post", {
-//         params,
-//         headers: {
-//           Authorization: `Bearer ${accessToken}`,
-//         },
-//       });
-//       return response.data.data;
-//     },
-//     {
-//       cacheTime: 300000,
-//     }
-//   );
-// };

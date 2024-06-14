@@ -6,6 +6,8 @@ import { useParams, useRouter, usePathname } from "next/navigation";
 import { title } from "process";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import icon from "../../../../../public/image/arrow.svg";
 type Props = {
   params: {
     slug: number;
@@ -38,7 +40,15 @@ const Detail = ({ params: { slug } }: Props) => {
           </div>
         </div>
         <div className="mt-5">
-          <Image src={imageURLs} alt="detail_image" width={1000} height={500} />
+          <img src={imageURLs} alt="detail_image" width={1000} height={500} />
+        </div>
+        <div className="flex justify-center w-auto mb-20 align-middle">
+          <div className="flex flex-row items-center justify-center gap-2 p-4 mt-8 bg-purple-700 rounded-full w-36">
+            <Image src={icon} alt="category"></Image>
+            <Link href="/" className="font-medium text-white">
+              메인으로
+            </Link>
+          </div>
         </div>
       </div>
     </section>
