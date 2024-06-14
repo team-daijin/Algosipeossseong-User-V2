@@ -48,7 +48,7 @@ export default function PostPage({ params: { slug } }: Props) {
           </h1>
         </div>
         <div className="flex flex-row gap-4 px-12">
-          {data?.data.map((card, index) => {
+          {data?.data.map((card: Card, index) => {
             console.log(data);
             return (
               <div key={index} className="flex flex-row py-8">
