@@ -59,7 +59,7 @@ export default function Home() {
 
   return (
     <main className="">
-      <Image src={Banner} alt="banner" width={0} height={0} sizes="8vw"></Image>
+      <Image src={Banner} alt="banner" width={0} height={0} sizes="7vw"></Image>
       <div className="flex flex-row">
         <Category />
         <main>
@@ -67,7 +67,7 @@ export default function Home() {
             <div className="flex flex-col px-12 pt-8">
               {data?.data.map((data, index) => {
                 return (
-                  <div key={index} className="flex flex-col pb-2">
+                  <div key={index} className="flex flex-col pb-6">
                     <div className="flex flex-col mb-2">
                       <h2 className="text-2xl font-semibold">
                         {constant[index].title}
