@@ -16,7 +16,7 @@ const Detail = ({ params: { slug } }: Props) => {
   const { data, isLoading, isError } = useCardQuery(slug);
   const [mainImage, setMainImage] = useState<string | undefined>(undefined);
   console.log(data);
-  const imageURLs = data?.data.content;
+  const imageURLs:string = data? data.data.content:"";
 
   console.log(imageURLs);
 
