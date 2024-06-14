@@ -3,11 +3,13 @@ import instance from "../../_utils/axios";
 import { useQuery } from "@tanstack/react-query";
 
 export interface Category {
-  cards: any;
-  id: string;
+  date: string;
   thumbnail: string;
   category: string;
   title: string;
+  expert: string;
+  id: number;
+  subTitle: string;
 }
 
 export type CategoryArray = Category[];

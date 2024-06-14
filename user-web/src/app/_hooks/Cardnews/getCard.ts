@@ -3,21 +3,12 @@ import instance from "../../_utils/axios";
 import { useQuery } from "@tanstack/react-query";
 
 export interface CardnewsType {
-  id: Number;
-  thumbnail: String;
-  category: String;
-  title: String;
-  expert: String;
-  content: String;
-}
-
-export interface CardnewsType {
-  id: Number;
-  thumbnail: String;
-  category: String;
-  title: String;
-  expert: String;
-  content: String;
+  id: number;
+  thumbnail: string;
+  category: string;
+  title: string;
+  expert: string;
+  content: string;
 }
 
 export interface Category {
